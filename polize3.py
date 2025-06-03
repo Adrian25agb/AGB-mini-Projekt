@@ -26,15 +26,15 @@ def buerger_bewertung_eingeben():
     if not ist_zahl(bewertung_text):
         print("Bitte zahl eingeben: ")
         return
-    bewertung = int(bewertung_text):
-        if 1 <= bewertung <= 10:
-            buerger_bewertungen[plz].append(bewertung)
-            print("Danke für ihre bewertung!")
-        else:
-            print("Die Bewertung muss zwischen 1 und 10 liegen.")
+    bewertung = int(bewertung_text)
+    if 1 <= bewertung <= 10:
+        buerger_bewertungen[plz].append(bewertung)
+        print("Danke für ihre bewertung!")
+    else:
+        print("Die Bewertung muss zwischen 1 und 10 liegen.")
 def berechne_gefahrscore(plz):
     bewertung = buerger_bewertungen[plz]
-    anzahl = len(bewertungen)
+    anzahl = len(bewertung)
     if anzahl == 0:
         durchschnitt = 5 #neutraler Mittelwert
     else:
@@ -47,11 +47,11 @@ def neue_einstufung(score):
     if score > 0.7:
         return "Hohe Gefahr"
     elif score > 0.4:
-        return ""Mittlere Gefahr"
+        return "Mittlere Gefahr"
     else:
         return "Geringe Gefahr"
 def alle_auswerten():
-    for plz in plz_gefahrenliste:
+    for plz in plz_gefahrliste:
         score = berechne_gefahrscore(plz)
         stufe = neue_einstufung(score)
         print("PLZ str(plz): Gefahrenstufe = str(stufe) (Score: str(score))")
