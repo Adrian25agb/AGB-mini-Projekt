@@ -51,7 +51,7 @@ def neue_einstufung(score):
     else:
         return "Geringe Gefahr"
 def alle_auswerten():
-    for plz in plz_gefahrliste:
-        score = berechne_gefahrscore(plz)
-        stufe = neue_einstufung(score)
-        print("PLZ str(plz): Gefahrenstufe = str(stufe) (Score: str(score))")
+   for plz in buerger_bewertungen:
+    bewertungen = buerger_bewertungen[plz]
+    if len(bewertungen) > 0:
+        print(plz, bewertungen)
