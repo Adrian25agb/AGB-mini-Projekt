@@ -62,3 +62,20 @@ def alle_auswerten():
             print("PLZ: " + str(plz) + " Bewertungen: " + str(bewertungen) + " Score: " + str(score) + " Einstufung: " + str(einstufung))
         else:
             print("PLZ: " + str(plz) + "Keine Bewertungen")
+
+
+print("Was möchten Sie tun?")
+print("1 - Neue Bewertung eingeben")
+print("2 - Alle Auswertungen anzeigen")
+print("3 - Programm beenden")
+
+auswahl = input("Ihre Auswahl: ")
+
+if auswahl == "1":
+    buerger_bewertung_eingeben()
+elif auswahl == "2":
+    alle_auswerten()
+elif auswahl == "3":
+    print("Programm beendet. Auf Wiedersehen!")
+else:
+    print("Ungültige Eingabe. Bitte 1, 2 oder 3 wählen.")
