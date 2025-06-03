@@ -59,3 +59,6 @@ def alle_auswerten():
         if len(bewertungen) > 0:
             score = berechne_gefahrscore(plz)
             einstufung = neue_einstufung(score)
+            print("PLZ: " + str(plz) + " Bewertungen: " + str(bewertungen) + " Score: " + str(score) + " Einstufung: " + str(einstufung))
+        else:
+            print("PLZ: " + str(plz) + "Keine Bewertungen")
