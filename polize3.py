@@ -39,9 +39,9 @@ def berechne_gefahrscore(plz):
     if anzahl == 0:
         durchschnitt = 5  # neutraler Mittelwert
     else:
-        durchschnitt = sum(bewertung) / anzahl
+        durchschnitt = sum(bewertung) / anzahl.                      #sum von chatgpt  
     unsicherheitswert = (1 - durchschnitt / 10)
-    bewertungsfaktor = min(anzahl / 10, 1)
+    bewertungsfaktor = min(anzahl / 10, 1)                           #chatgpt
     score = unsicherheitswert * (0.9 + 0.1 * (1 - bewertungsfaktor))
     return round(score, 2)
 
@@ -80,6 +80,6 @@ while auswahl != 3:
         alle_auswerten()
     elif auswahl == "3":
         print("Programm beendet. Auf Wiedersehen!")
-        break
+        break                                          #internet https://www.digitalocean.com/community/tutorials/how-to-use-break-continue-and-pass-statements-when-working-with-loops-in-python-3-de
     else:
         print("Ungültige Eingabe. Bitte 1, 2 oder 3 wählen.")
