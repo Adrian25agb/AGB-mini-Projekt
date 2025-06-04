@@ -39,7 +39,7 @@ def berechne_gefahrscore(plz):
     if anzahl == 0:
         durchschnitt = 5  # neutraler Mittelwert
     else:
-        durchschnitt = sum(bewertung) / anzahl.                      #sum von chatgpt  
+        durchschnitt = sum(bewertung) / anzahl                       #sum von chatgpt  
     unsicherheitswert = (1 - durchschnitt / 10)
     bewertungsfaktor = min(anzahl / 10, 1)                           #chatgpt
     score = unsicherheitswert * (0.9 + 0.1 * (1 - bewertungsfaktor))
@@ -59,8 +59,7 @@ def alle_auswerten():
         if len(bewertungen) > 0:
             score = berechne_gefahrscore(plz)
             einstufung = neue_einstufung(score)
-            print("PLZ: " + str(plz) + " Bewertungen: " + str(bewertungen) + 
-                  " Score: " + str(score) + " Einstufung: " + str(einstufung))
+            print("PLZ: " + str(plz) + " Bewertungen: " + str(bewertungen) + " Score: " + str(score) + " Einstufung: " + str(einstufung))
         else:
             print("PLZ: " + str(plz) + " Keine Bewertungen")
 
