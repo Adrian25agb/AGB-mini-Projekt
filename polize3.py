@@ -4,7 +4,7 @@ plz_gefahrliste = {
     "10437": 2,
     "10555": 7,
     "10999": 9
-}
+}                       #Dictionaries (https://www.w3schools.com/python/python_dictionaries.asp)
 
 buerger_bewertungen = {
     "10115": [],
@@ -12,7 +12,7 @@ buerger_bewertungen = {
     "10437": [],
     "10555": [],
     "10999": []
-}
+}                       #Dictionaries (https://www.w3schools.com/python/python_dictionaries.asp)
 
 def ist_zahl(text):
     return text.isdigit()
