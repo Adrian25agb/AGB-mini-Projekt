@@ -39,11 +39,11 @@ def berechne_gefahrscore(plz):
     if anzahl == 0:
         durchschnitt = 5  # neutraler Mittelwert
     else:
-        durchschnitt = sum(bewertung) / anzahl
+        durchschnitt = sum(bewertung) / anzahl #sum von chatgpt
     unsicherheitswert = (1 - durchschnitt / 10)
-    bewertungsfaktor = min(anzahl / 10, 1)
+    bewertungsfaktor = min(anzahl / 10, 1) #chatgpt
     score = unsicherheitswert * (0.9 + 0.1 * (1 - bewertungsfaktor))
-    return round(score, 2)
+    return round(score, 2) 
 
 def neue_einstufung(score):
     if score > 0.7:
