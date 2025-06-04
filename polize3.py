@@ -39,11 +39,11 @@ def berechne_gefahrscore(plz):
     if anzahl == 0:
         durchschnitt = 5  # neutraler Mittelwert
     else:
-        durchschnitt = sum(bewertung) / anzahl #sum von chatgpt
+        durchschnitt = sum(bewertung) / anzahl
     unsicherheitswert = (1 - durchschnitt / 10)
-    bewertungsfaktor = min(anzahl / 10, 1) #chatgpt
+    bewertungsfaktor = min(anzahl / 10, 1)
     score = unsicherheitswert * (0.9 + 0.1 * (1 - bewertungsfaktor))
-    return round(score, 2) 
+    return round(score, 2)
 
 def neue_einstufung(score):
     if score > 0.7:
@@ -59,23 +59,27 @@ def alle_auswerten():
         if len(bewertungen) > 0:
             score = berechne_gefahrscore(plz)
             einstufung = neue_einstufung(score)
-            print("PLZ: " + str(plz) + " Bewertungen: " + str(bewertungen) + " Score: " + str(score) + " Einstufung: " + str(einstufung))
+            print("PLZ: " + str(plz) + " Bewertungen: " + str(bewertungen) + 
+                  " Score: " + str(score) + " Einstufung: " + str(einstufung))
         else:
-            print("PLZ: " + str(plz) + "Keine Bewertungen")
+            print("PLZ: " + str(plz) + " Keine Bewertungen")
 
+# Wiederholungsschleife
+auswahl = 0
+while auswahl != 3:
+    print("\nWas möchten Sie tun?")
+    print("1 - Neue Bewertung eingeben")
+    print("2 - Alle Auswertungen anzeigen")
+    print("3 - Programm beenden")
 
-print("Was möchten Sie tun?")
-print("1 - Neue Bewertung eingeben")
-print("2 - Alle Auswertungen anzeigen")
-print("3 - Programm beenden")
+    auswahl = input("Ihre Auswahl: ")
 
-auswahl = input("Ihre Auswahl: ")
-
-if auswahl == "1":
-    buerger_bewertung_eingeben()
-elif auswahl == "2":
-    alle_auswerten()
-elif auswahl == "3":
-    print("Programm beendet. Auf Wiedersehen!")
-else:
-    print("Ungültige Eingabe. Bitte 1, 2 oder 3 wählen.")
+    if auswahl == "1":
+        buerger_bewertung_eingeben()
+    elif auswahl == "2":
+        alle_auswerten()
+    elif auswahl == "3":
+        print("Programm beendet. Auf Wiedersehen!")
+        break
+    else:
+        print("Ungültige Eingabe. Bitte 1, 2 oder 3 wählen.")
